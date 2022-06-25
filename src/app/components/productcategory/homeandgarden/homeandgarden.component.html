@@ -1,0 +1,38 @@
+
+<p>homeandgarden works!</p>
+<!-- <div class="container ">
+    <div class="row ">
+        <ng-container *ngFor="let item of productList">
+            <div class="card col-md-3 bg-light">
+                <img src="{{item.image}}" alt=""> 
+               <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productName}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.pDescription}}</p>
+                <p><strong>Price:</strong> ${{item.pPrice}}.00</p>
+                <p></p>
+                <p></p>
+                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+    </div>
+</div> -->
+<div class="container ">
+    <div class="row ">
+        <ng-container *ngFor="let item of productList">
+            <div class="card col-md-3 bg-light">
+                <img src="{{item.image}}" alt=""> 
+               <h3 class ="text-uppercase" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;font-weight:bold;">{{item.productName}}</h3>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.pDescription}}</p>
+                <p><strong>Price:</strong><strong> $ {{item.pPrice}}.00 </strong></p>
+                <p> <strong>Quntity:</strong>
+                  <button type="button" class="btn" (click)=inc(item)>
+                    <i class="fa fa-plus"></i>
+                  </button> {{item.pUnit}}<button type="button" class="btn"(click)=dec(item) >
+                    <i class="fa fa-minus"></i></button></p>
+                    <p>Free International Shipping from srilanka</p>
+                <button class="btn btn-primary" (click)=addtocart(item)  routerLinkActive="router-link-active" >Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+<app-footer></app-footer>

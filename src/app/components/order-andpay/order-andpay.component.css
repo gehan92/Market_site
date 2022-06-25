@@ -1,0 +1,21 @@
+.card {
+  /* height: 0vh; */
+  margin: 25px;
+  padding: 25px;
+}
+
+.center {
+  position: absolute;
+  /* top: 70%; */
+  left: 50%;
+  /* transform: translate(-50%,-50%);
+    text-align: center; */
+}
+
+.p-3 {
+  padding: 10;
+}
+
+.mt-0 {
+  margin-top: 1500;
+}

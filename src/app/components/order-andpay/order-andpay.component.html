@@ -1,0 +1,175 @@
+
+<!-- 
+<div class="card .mt-0 bg-light" style="width: 800px ;">
+  <div class="card-header bg-light p-3">
+    <h3>Ship to</h3>
+    <p><strong>No of Products:</strong> 5</p>
+    <p><strong>Sub total:</strong> 400.00</p>
+    <p></p>
+    <p></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <form>
+      <div class="col p-3">
+        <div class="row p-3">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Country" />
+          </div>
+        </div>
+        <div class="row p-3">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="First name" />
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Last name" />
+          </div>
+        </div>
+
+        <div class="row p-3">
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Street Adress 1"
+            />
+          </div>
+          <div class="col">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Street Adress 2"
+            />
+          </div>
+        </div>
+        <div class="row p-3">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="City" />
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="State" />
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Zip code" />
+          </div>
+        </div>
+        <div class="row p-3">
+          <div class="col">
+            <input type="email" class="form-control" placeholder="Email" />
+          </div>
+          <div class="col">
+            <input
+              type="number"
+              class="form-control"
+              placeholder="Phone Number"
+            />
+          </div>
+        </div>
+
+        <div class="p-3">
+          <button type="button" class="btn btn-primary">Done</button>
+        </div>
+      </div>
+    </form>
+  </ul>
+</div> -->
+
+<div class="d-flex justify-content-center">
+  <div class="card .mt-0 bg-light" style="width: 800px">
+    <div class="card-header bg-light p-3">
+
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <div class="text-primary">
+              <h1>Ship to.. .</h1>
+            </div>
+            <p><strong>Shopping</strong> free</p>
+            <p><strong>Sub total:</strong>Rs. {{total}}.00</p>
+            <p></p>
+            <p></p>
+          </div>
+          <div class="col d-flex justify-content-end">
+            <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="" />
+          </div>
+        </div>
+        <div class="row">
+          <ng-container *ngIf="checkval!=null" >
+          <div class="col">
+            <button (click)="pay(total)" type="button"  class="btn btn-primary">Confirm and Pay</button>
+          </div>
+        </ng-container>
+        </div>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <form [formGroup]="exform" #orderPost="ngForm" (ngSubmit)="OrderData(orderPost.value)">
+        <div class="col p-3">
+          <div class="row p-3">
+            <div class="col">
+              <input formControlName="uname" type="text" class="form-control" ngModel  name="country" placeholder="Country" />
+              <small *ngIf="exform.get('uname').invalid &&  exform.get('uname').touched" class="text-danger">Country Is Required</small>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col">
+              <input formControlName="fname" type="text" class="form-control" ngModel  name="fname" placeholder="First name" />
+              <small *ngIf="exform.get('fname').invalid &&  exform.get('fname').touched" class="text-danger">Fname Is Required</small>
+            </div>
+            <div class="col">
+              <input formControlName="lname" type="text" class="form-control" ngModel  name="lname" placeholder="Last name" />
+              <small *ngIf="exform.get('lname').invalid &&  exform.get('lname').touched" class="text-danger">Lname Is Required</small>
+            </div>
+          </div>
+
+          <div class="row p-3">
+            <div class="col">
+              <input formControlName="address" type="text" class="form-control" ngModel  name="address" placeholder="Street Adress" />
+              <small *ngIf="exform.get('address').invalid &&  exform.get('address').touched" class="text-danger">Address Is Required</small>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col">
+              <input formControlName="city" type="text" class="form-control" ngModel  name="city" placeholder="City" />
+              <small *ngIf="exform.get('city').invalid &&  exform.get('city').touched" class="text-danger">City Is Required</small>
+            </div>
+            <div class="col">
+              <input formControlName="state" type="text" class="form-control" ngModel  name="state" placeholder="State" />
+              <small *ngIf="exform.get('state').invalid &&  exform.get('state').touched" class="text-danger">State Is Required</small>
+            </div>
+            <div class="col">
+              <input formControlName="zip" type="number" class="form-control" ngModel  name="zip" placeholder="Zip code" />
+              <small *ngIf="exform.get('zip').invalid &&  exform.get('zip').touched" class="text-danger">ZipCode Is Required</small>
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col">
+              <input formControlName="email"type="email" class="form-control" ngModel  name="email" placeholder="Email" />
+              <small *ngIf="exform.get('email').invalid &&  exform.get('email').touched" class="text-danger">Email Is Required</small>
+            </div>
+            <div class="col">
+              <input formControlName="mobile"type="number" class="form-control" ngModel  name="mobile" placeholder="Phone Number" />
+              <small *ngIf="exform.get('mobile').invalid &&  exform.get('mobile').touched" class="text-danger">Mobile  number Is Required</small>
+            </div>
+          </div>
+          <div class="p-3">
+            <ng-container *ngIf="checkval==null" >
+            <div class="p-3">
+              <button [disabled]="exform.invalid" type="submit" class="btn btn-primary" >Done</button>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="checkval!=null" >
+            <div class="p-3">
+              <button  type="submit" class="btn btn-primary" >Edit</button>
+            </div>
+          </ng-container>
+          <!-- <ng-container *ngIf="checkval==null" >
+            <div class="p-3">
+              <button type="submit" class="btn btn-primary" >Done</button>
+            </div>
+          </ng-container> -->
+          </div>
+        </div>
+      </form>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<header>
+    <!-- https://fakestoreapi.com/products/ -->
+    <div class="navbar bg-black shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            <i style="color: wheat;padding: 10px;" class="fas fa-shipping-fast "></i>
+            <strong style="color: aliceblue; font-size: 20px;padding: 10px;">
+                Online Market Site
+            </strong>
+            <!-- <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search products">
+            </div>
+            <span class="fas fa-search serarch-icon"></span> -->
+        </div>
+
+        <ng-container *ngIf="totalItem ==0">
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+            </li>
+          </ul>
+        </ng-container>
+
+        <ul class="nav justify-content-end">
+            
+            <li class="nav-item">
+              <a class="nav-link text-light" href="/login">signup</a>
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link text-light" (click)="test()" href="/bill">Bill</a> -->
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link text-light" (click)="Logout()" href="/home">Logout</a>
+            </li>
+            <!-- <ng-container *ngIf="totalItem ==0">
+            <li class="nav-item">
+              <a class="nav-link" (click)="Logout1()" href="">Logout</a>
+            </li>
+            </ng-container> -->
+            <li class="nav-item">
+                <button routerLink="/cart/" class="btn btn-success">
+                    <i style="font-size: 30px;" class="fas fa-cart-plus"> </i>
+                      <!-- <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div> -->
+                </button>
+            </li>
+          </ul>
+        <!-- <button routerLink="/cart/" class="btn btn-primary">
+          <i style="font-size: 30px;" class="fas fa-cart-plus"> </i>
+            <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+        </button> -->
+    </div>
+</header>
+

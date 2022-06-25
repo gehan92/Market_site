@@ -1,0 +1,41 @@
+ /* .card {
+   
+  
+    width: 500px;
+    padding: 20px;
+    top: 80%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: hsla(205, 46%, 30%, 1);
+    background: linear-gradient(
+      90deg,
+      hsla(205, 46%, 30%, 1) 0%,
+      hsla(205, 46%, 30%, 1) 100%
+    );
+  }  */
+
+  .card{
+    /* border: none; */
+    position: absolute;
+    width: 500px;
+    /* padding: 40px; */
+     top: 19ch; 
+    left: 32%;
+    /* transform: translate(-50%,-50%); */
+    background: rgb(1, 32, 32); 
+    background: linear-gradient(90deg,rgb(24, 0, 24),0%,rgb(66, 65, 118),100%);
+  }
+  .card-title {
+    color: aliceblue;
+  }
+  
+  .mb-3 {
+    color: aliceblue;
+  }
+  .card-header {
+    color: bisque;
+  }
+  .card-title {
+    color: aliceblue;
+  }

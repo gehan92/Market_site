@@ -1,0 +1,12 @@
+.colorVal{
+    /* border: none; */
+    /* position: absolute; */
+    /* width: 430px; */
+    /* padding: 40px; */
+     /* top: 25ch; 
+    left: 32%; */
+    /* transform: translate(-50%,-50%); */
+    /* background: rgb(1, 32, 32);  */
+    background: rgb(68, 68, 45);
+    background: linear-gradient(90deg,rgb(24, 0, 24),0%,rgb(66, 65, 118),100%);
+  }

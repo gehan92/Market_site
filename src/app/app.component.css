@@ -1,0 +1,25 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+
+  .colorVal{
+    /* border: none; */
+    /* position: absolute; */
+    /* width: 430px; */
+    /* padding: 40px; */
+     /* top: 25ch; 
+    left: 32%; */
+    /* transform: translate(-50%,-50%); */
+    /* background: rgb(1, 32, 32);  */
+    background: rgb(210, 211, 241);
+    background: linear-gradient(90deg,rgb(24, 0, 24),0%,rgb(66, 65, 118),100%);
+  }

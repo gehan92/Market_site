@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <h1 class="text-center">Login</h1>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title text-center">Please enter username and password</h5>
+    <form [formGroup]="exform" #userLogin="ngForm" (ngSubmit)="userLoginMethord(userLogin.value)">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label text-bg-primary">Email</label>
+        <input formControlName="email" type="email" class="form-control" ngModel name="Email" placeholder="name@example.com" />
+        <small *ngIf="exform.get('email').invalid &&  exform.get('email').touched" class="text-danger">Email Is Required</small>
+      </div>
+      <div class="mb-3">
+        <label for="passwordFormControlInput1" class="form-label">Password</label>
+        <input formControlName="password" type="password" class="form-control" ngModel name="Password" placeholder="password" />
+        <small *ngIf="exform.get('password').invalid &&  exform.get('password').touched"class="text-danger">Password is Required</small>
+      </div>
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit">Login</button>
+      </div>
+      <br />
+      <div class="click-signup "><a class="text-bg-danger" routerLink="/signup/">New User? Click to signup</a></div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+<ng-container *ngIf="historyList.length ==0">
+
+    <div class="container" style="height: 70%;">
+        <br><br>
+        <div class="card">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+                <!-- <h5 class="card-title">Special title treatment</h5> -->
+                <p class="card-text">No History</p>
+                <a href="/home" class="btn btn-primary">Shop now</a>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<br>
+<!-- <app-footer></app-footer>----------------------------------------------------- -->
+<ng-container *ngIf="historyList.length !=0">
+    <div class="table-responsive" style="padding: 1%;">
+        <table class="table align-middle table-hover" style="background-color: rgb(245, 245, 245);">
+            <thead style="background-color: rgb(245, 245, 245);color: rgb(8, 8, 8);">
+                <tr>
+                    <th >#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">OrderId</th>
+                    <th scope="col">PaymetId</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">More Details</th>
+                </tr>
+            </thead>
+            <tbody  >
+                <tr *ngFor="let item of historyList ; let i = index">
+                    <ng-container *ngFor="let paymentlitem of paymentList">
+                        <ng-container *ngIf="item.paymentId == paymentlitem.id">
+                            <ng-container *ngFor="let Orderitem of orderList">
+                                <ng-container *ngIf="paymentlitem.orderId== Orderitem.id">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{ Orderitem.fname }} {{ Orderitem.lname }}</td>
+                                    <td>{{ Orderitem.address1 }}</td>
+                                    <td>{{ Orderitem.email }}</td>
+                                    <td>{{ Orderitem.mobile }}</td>
+                                    <td>{{ paymentlitem.orderId }}</td>
+                                    <td>{{ paymentlitem.id}}</td>
+                                    <td>{{ paymentlitem.create }}</td>
+                                    <td>$ {{ paymentlitem.amount }}.00</td>
+                                    <td><button  class="btn btn-primary"(click)="openDialog(Orderitem.cartId)"><i class="fas "></i>view</button></td>
+                                </ng-container>
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</ng-container>
+<br>
+<app-footer></app-footer>
+
+<!-- <ng-container *ngIf="products.length !=0">
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Sr.No</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Quntity</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor ="let item of products; let i = index "> 
+                            <td>{{i+1}}</td>
+                            <td>{{item.title}}</td>
+                            <td><img style="width: 120px;" src="{{item.image}}"alt=""></td>
+                            <td style="width: 25%;">{{item.productId}}</td>
+                            <td  style="width: 12%;">{{item.pPrice}}</td>
+                            <td  style="width: 12%;">{{item.qty*1000}}</td>
+                            <td  style="width: 12%;">{{item.total}}</td>
+                            <td style="width: 12%;"><button (click)="removeItem(item.id)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            
+                            <td><button routerLink="/home" class="btn btn-danger">Shop More</button></td>
+                            <td><button (click)="removecartId()" class="btn btn-danger">Checkout</button></td>
+                            <td><strong class="right">Grand Total : ${{grandTotal}}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-container> -->
+
+<!-- <ng-container *ngIf="products.length == 0" >
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+           
+            <h4>Your cart is empty</h4>
+            <h5>Add item to it now</h5>
+            <button routerLink="/home" class="btn btn-primary">Shop Now</button>
+        </div>
+    </div>
+</ng-container> -->
